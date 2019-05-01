@@ -16,7 +16,7 @@ def respond(body: str) -> func.HttpResponse:
 def source(req: func.HttpRequest) -> str:
     jsonEvent = req.get_json()
     logging.info(jsonEvent)
-    if 'Created Migration' in jsonEvent['message']:
+    if 'VirtualMachine' in jsonEvent['message']:
         return "VM"
     else:
         return "Unknown"
